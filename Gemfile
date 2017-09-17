@@ -10,9 +10,7 @@ gem 'rails', '~> 5.1.4'   # Bundle edge Rails instead: gem 'rails', github: 'rai
 gem 'pg', '~> 0.18'       # Use postgresql as the database for Active Record
 gem 'puma', '~> 3.7'      # Use Puma as the app server
 gem 'devise'              # users
-gem 'aws-sdk', `~> 2`     # connect to aws
-gem 'omniauth'            # sign in
-gem 'omniauth-twitter'    # sign in with twitter
+gem 'aws-sdk', '~> 2'     # connect to aws
 
 ## ASSETS
 # Use SCSS for stylesheets
@@ -24,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

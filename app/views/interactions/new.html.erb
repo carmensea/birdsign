@@ -1,4 +1,3 @@
-test
 <%= form_for(@interaction, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
   <% if @interaction.errors.any? %>
     <div id="error_explanation">
@@ -7,6 +6,6 @@ test
   <div class="field">
     <%= f.label :photo_url %><br>
     <%= f.file_field :photo_url %>
-	</div>
+  </div>
 <% end %>
 

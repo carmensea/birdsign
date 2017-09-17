@@ -6,5 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @user.setting.assign_attributes(:settings)
   end
 end

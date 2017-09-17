@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :settings
+  has_one :setting
+  after_create :add_setting
   def self.find_or_create_from_auth_hash(auth_hash)
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
     user.update(
@@ -8,5 +9,9 @@ class User < ApplicationRecord
       secret: auth_hash.credentials.secret
     )
     user
+  end
+
+  def add_setting
+    self.create_setting
   end
 end

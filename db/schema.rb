@@ -10,14 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917000200) do
+ActiveRecord::Schema.define(version: 20170917004720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
 
+  create_table "celeb_settings", force: :cascade do |t|
+    t.integer "default_charity"
+    t.integer "default_charity_percent"
+    t.boolean "show_charity_percent"
+    t.string "default_specifications"
+    t.boolean "dont_bother_me"
+    t.integer "celeb_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "examples", force: :cascade do |t|
+    t.string "name"
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "interactions", force: :cascade do |t|
     t.string "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "address1"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.boolean "email_notifications"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

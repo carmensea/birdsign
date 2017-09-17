@@ -11,8 +11,6 @@ gem 'pg', '~> 0.18'       # Use postgresql as the database for Active Record
 gem 'puma', '~> 3.7'      # Use Puma as the app server
 gem 'devise'              # users
 gem 'aws-sdk', '~> 2'     # connect to aws
-gem 'omniauth'            # sign in
-gem 'omniauth-twitter'    # sign in with twitter
 
 ## ASSETS
 # Use SCSS for stylesheets
@@ -22,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -42,6 +42,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
+  gem 'awesome_print'
 end
 
 group :development do

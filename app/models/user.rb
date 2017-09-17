@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_one :setting
+  accepts_nested_attributes_for :setting
+
   after_create :add_setting
+
   def self.find_or_create_from_auth_hash(auth_hash)
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
     user.update(

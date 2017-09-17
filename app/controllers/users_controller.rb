@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :show, :update]
+
   def index
   end
 
@@ -6,7 +8,24 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
-    @user.setting.assign_attributes(:settings)
   end
+
+  def update
+    pp params
+    if @user.update(user_params)
+      redirect_to @user, notice: 'Settings were successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  private
+    def user_params
+      params.require(:user).permit(setting: [:address1, :address2, :city, :state, :zip])
+    end
+
+    def set_user
+      @user = current_user
+    end
+
 end

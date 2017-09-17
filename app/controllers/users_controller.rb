@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    pp params
     if @user.update(user_params)
       redirect_to @user, notice: 'Settings were successfully updated.'
     else
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(setting: [:address1, :address2, :city, :state, :zip])
+      params.require(:user).permit(setting_attributes: [:address1, :address2, :city, :state, :zip])
     end
 
     def set_user

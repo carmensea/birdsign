@@ -14,13 +14,7 @@ ActiveRecord::Schema.define(version: 20170916230505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "interactions", force: :cascade do |t|
-    t.integer "status"
-    t.string "photo_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  enable_extension "hstore"
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
